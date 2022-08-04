@@ -59,7 +59,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/getAllProjects").antMatchers("/getAllContactDetails").antMatchers("/addProject").antMatchers("/deleteProject/{projectId}");
+		web.ignoring().antMatchers("/getAllProjects").antMatchers("/getAllContactDetails");
 	}
 	
 	
