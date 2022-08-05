@@ -16,6 +16,6 @@ public class ProjectDetails {
 	private String projectName;
 	private String projectImg;
 	private String discription;
-	private boolean projectStatus;
+	private String projectStatus;
 
 }
