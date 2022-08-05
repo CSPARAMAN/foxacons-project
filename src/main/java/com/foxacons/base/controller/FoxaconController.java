@@ -60,7 +60,11 @@ public class FoxaconController {
 			authenticationManager.authenticate(
 					new UsernamePasswordAuthenticationToken(request.getAdminEmail(), request.getAdminPassword()));
 		} catch (AuthenticationException e) {
-			throw new Exception("invaild id and password", e);
+			//throw new Exception("invaild id and password", e);
+			response.setStatuscode(401);
+			response.setMsg("admin unauthorized");
+			return response;
+			
 			
 		}
 		UserDetails userDetails = userDetailsService.loadUserByUsername(request.getAdminEmail());
