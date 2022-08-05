@@ -61,8 +61,7 @@ public class FoxaconController {
 					new UsernamePasswordAuthenticationToken(request.getAdminEmail(), request.getAdminPassword()));
 		} catch (AuthenticationException e) {
 			throw new Exception("invaild id and password", e);
-			response.setStatuscode(401);
-		response.setMsg("admin  unauthorized");
+			
 		}
 		UserDetails userDetails = userDetailsService.loadUserByUsername(request.getAdminEmail());
 		String jwt = jwtUtil.generateToken(userDetails);
